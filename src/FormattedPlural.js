@@ -1,15 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Text } from 'react-native';
-import Intl from 'react-intl';
+import { FormattedPlural as DefaultFormattedPlural } from 'react-intl';
 
-const FormattedPlural = props => (
-  <Intl.FormattedPlural {...props}>
+export const FormattedPlural = props => (
+  <DefaultFormattedPlural {...props}>
     {localized => <Text style={props.style}>{localized}</Text>}
-  </Intl.FormattedPlural>
+  </DefaultFormattedPlural>
 );
 
 FormattedPlural.propTypes = {
   style: PropTypes.any,
 };
-
-export default FormattedPlural;

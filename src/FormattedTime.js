@@ -1,15 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Text } from 'react-native';
-import Intl from 'react-intl';
+import { FormattedTime as DefaultFormattedTime } from 'react-intl';
 
-const FormattedTime = props => (
-  <Intl.FormattedTime {...props}>
+export const FormattedTime = props => (
+  <DefaultFormattedTime {...props}>
     {localized => <Text style={props.style}>{localized}</Text>}
-  </Intl.FormattedTime>
+  </DefaultFormattedTime>
 );
 
 FormattedTime.propTypes = {
   style: PropTypes.any,
 };
-
-export default FormattedTime;

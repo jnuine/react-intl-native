@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Text } from 'react-native';
-import Intl from 'react-intl';
+import { FormattedNumber as DefaultFormattedNumber } from 'react-intl';
 
-const FormattedNumber = props => {
+export const FormattedNumber = props => {
   const style = props.style;
 
   const formatOptions = {
@@ -20,9 +20,9 @@ const FormattedNumber = props => {
   };
 
   return (
-    <Intl.FormattedNumber {...formatOptions}>
+    <DefaultFormattedNumber {...formatOptions}>
       {localized => <Text style={style}>{localized}</Text>}
-    </Intl.FormattedNumber>
+    </DefaultFormattedNumber>
   );
 };
 
@@ -40,5 +40,3 @@ FormattedNumber.propTypes = {
   maximumSignificantDigits: PropTypes.any,
   value: PropTypes.any,
 };
-
-export default FormattedNumber;

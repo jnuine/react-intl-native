@@ -1,9 +1,9 @@
 import React, { PropTypes, isValidElement, createElement } from 'react';
 import { Text } from 'react-native';
-import Intl from 'react-intl';
+import { FormattedMessage as DefaultFormattedMessage } from 'react-intl';
 
-const FormattedMessage = props => (
-  <Intl.FormattedMessage {...props}>
+export const FormattedMessage = props => (
+  <DefaultFormattedMessage {...props}>
     {(...nodes) => {
       const newNodes = nodes.map((node) => {
         if (!isValidElement(node)) {
@@ -11,13 +11,11 @@ const FormattedMessage = props => (
         }
         return node;
       });
-      return createElement(Text, {style: props.style}, ...newNodes);
+      return createElement(Text, { style: props.style }, ...newNodes);
     }}
-  </Intl.FormattedMessage>
+  </DefaultFormattedMessage>
 );
 
 FormattedMessage.propTypes = {
   style: PropTypes.any,
 };
-
-export default FormattedMessage;

@@ -1,15 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Text } from 'react-native';
-import Intl from 'react-intl';
+import { FormattedDate as DefaultFormattedDate } from 'react-intl';
 
-const FormattedDate = props => (
-  <Intl.FormattedDate {...props}>
+export const FormattedDate = props => (
+  <DefaultFormattedDate {...props}>
     {localized => <Text style={props.style}>{localized}</Text>}
-  </Intl.FormattedDate>
+  </DefaultFormattedDate>
 );
 
 FormattedDate.propTypes = {
   style: PropTypes.any,
 };
-
-export default FormattedDate;

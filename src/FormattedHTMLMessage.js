@@ -1,15 +1,13 @@
 import React, { PropTypes } from 'react';
 import { Text } from 'react-native';
-import Intl from 'react-intl';
+import { FormattedHTMLMessage as DefaultFormattedHTMLMessage } from 'react-intl';
 
-const FormattedHTMLMessage = props => (
-  <Intl.FormattedHTMLMessage {...props}>
+export const FormattedHTMLMessage = props => (
+  <DefaultFormattedHTMLMessage {...props}>
     {localized => <Text style={props.style}>{localized}</Text>}
-  </Intl.FormattedHTMLMessage>
+  </DefaultFormattedHTMLMessage>
 );
 
 FormattedHTMLMessage.propTypes = {
   style: PropTypes.any,
 };
-
-export default FormattedHTMLMessage;
